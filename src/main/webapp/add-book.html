@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add Book</title>
+    <script type="text/javascript">
+        function validateForm() {
+            var title = document.forms["bookForm"]["title"].value;
+            var author = document.forms["bookForm"]["author"].value;
+            var genre = document.forms["bookForm"]["genre"].value;
+            if (title === "" || author === "" || genre === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="bookForm" action="AddBookServlet" method="post" onsubmit="return validateForm()">
+        Title: <input type="text" name="title">
+        Author: <input type="text" name="author">
+        Genre: <input type="text" name="genre">
+        <input type="submit" value="Add Book">
+    </form>
+</body>
+</html>
